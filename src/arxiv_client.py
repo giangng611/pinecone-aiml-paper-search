@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import logging
+import ssl
 import time
 import urllib.error
 import urllib.parse
@@ -163,10 +164,20 @@ def _fetch_api(params: dict[str, str]) -> str:
     url = f"{ARXIV_API_URL}?{urllib.parse.urlencode(params)}"
     request = urllib.request.Request(url, headers={"User-Agent": "uga-csci4370-pinecone-paper-search/1.0"})
     try:
-        with urllib.request.urlopen(request, timeout=30) as response:
+        with urllib.request.urlopen(request, timeout=30, context=_ssl_context()) as response:
             return response.read().decode("utf-8")
     except urllib.error.HTTPError as exc:
         raise ArxivClientError(f"arXiv API returned HTTP {exc.code}") from exc
+
+
+def _ssl_context() -> ssl.SSLContext:
+    """Return an SSL context that works reliably in local virtual environments."""
+    try:
+        import certifi
+
+        return ssl.create_default_context(cafile=certifi.where())
+    except ImportError:
+        return ssl.create_default_context()
 
 
 def _entry_text(entry: ET.Element, path: str) -> str:
@@ -178,4 +189,3 @@ def _alternate_link(entry: ET.Element) -> str | None:
         if link.attrib.get("rel") == "alternate" and link.attrib.get("href"):
             return link.attrib["href"]
     return None
-

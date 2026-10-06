@@ -6,6 +6,8 @@ import os
 from dataclasses import dataclass
 from pathlib import Path
 
+from dotenv import load_dotenv
+
 
 DEFAULT_INDEX_NAME = "aiml-paper-search"
 DEFAULT_NAMESPACE = "arxiv-papers"
@@ -63,6 +65,7 @@ class ConfigError(ValueError):
 
 def load_settings() -> Settings:
     """Load application settings from environment variables."""
+    load_dotenv()
     return Settings(
         pinecone_api_key=os.getenv("PINECONE_API_KEY"),
         index_name=os.getenv("PINECONE_INDEX_NAME", DEFAULT_INDEX_NAME),
@@ -84,4 +87,3 @@ def _get_int_env(name: str, default: int) -> int:
         return int(value)
     except ValueError as exc:
         raise ConfigError(f"{name} must be an integer.") from exc
-
