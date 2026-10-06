@@ -1,0 +1,65 @@
+[
+  {
+    "query": "efficient techniques for running large language models on devices with limited memory",
+    "expected_categories": ["cs.CL", "cs.LG"],
+    "expected_concepts": ["quantization", "low-rank adaptation", "efficient inference"],
+    "relevant_ids": []
+  },
+  {
+    "query": "transformer architectures for image classification",
+    "expected_categories": ["cs.CV"],
+    "expected_concepts": ["vision transformer", "image recognition", "patch embeddings"],
+    "relevant_ids": []
+  },
+  {
+    "query": "retrieval augmented generation and vector search for question answering",
+    "expected_categories": ["cs.CL", "cs.IR"],
+    "expected_concepts": ["retrieval", "question answering", "semantic search"],
+    "relevant_ids": []
+  },
+  {
+    "query": "fine tuning large neural language models with fewer trainable parameters",
+    "expected_categories": ["cs.CL", "cs.LG"],
+    "expected_concepts": ["parameter efficient fine tuning", "adapters", "LoRA"],
+    "relevant_ids": []
+  },
+  {
+    "query": "self supervised representation learning for computer vision",
+    "expected_categories": ["cs.CV", "cs.LG"],
+    "expected_concepts": ["contrastive learning", "self-supervised", "visual representation"],
+    "relevant_ids": []
+  },
+  {
+    "query": "speech recognition models based on deep learning",
+    "expected_categories": ["cs.CL", "eess.AS"],
+    "expected_concepts": ["automatic speech recognition", "sequence modeling"],
+    "relevant_ids": []
+  },
+  {
+    "query": "graph neural networks for learning over relational data",
+    "expected_categories": ["cs.LG", "cs.AI"],
+    "expected_concepts": ["graph neural network", "message passing", "relational"],
+    "relevant_ids": []
+  },
+  {
+    "query": "reinforcement learning agents that learn from human feedback",
+    "expected_categories": ["cs.AI", "cs.LG"],
+    "expected_concepts": ["reinforcement learning", "human feedback", "policy optimization"],
+    "relevant_ids": []
+  },
+  {
+    "query": "neural machine translation using attention mechanisms",
+    "expected_categories": ["cs.CL"],
+    "expected_concepts": ["attention", "machine translation", "transformer"],
+    "relevant_ids": []
+  },
+  {
+    "query": "metadata filtered search for recent computer vision papers",
+    "expected_categories": ["cs.CV"],
+    "expected_concepts": ["computer vision", "recent papers"],
+    "relevant_ids": [],
+    "filter_category": "cs.CV",
+    "min_year": 2020
+  }
+]
+

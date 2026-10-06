@@ -1,0 +1,5 @@
+query,rank,record_id,title,relevant,notes
+"efficient techniques for running large language models on devices with limited memory",1,,,,
+"transformer architectures for image classification",1,,,,
+"retrieval augmented generation and vector search for question answering",1,,,,
+
