@@ -1,0 +1,24 @@
+.env
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+dist/
+build/
+*.egg-info/
+
+# Local data and generated outputs
+data/arxiv_papers.jsonl
+evaluation/results.csv
+evaluation/summary.md
+evaluation/manual_labels.csv
+
+# Secrets and editor files
+*.pem
+*.key
+.DS_Store
+.idea/
+
